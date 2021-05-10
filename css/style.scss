@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  img {
+    max-width: 100%;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+main {
+  .profile {
+    width: 95%;
+    max-width: 900px;
+    margin-block: 2em;
+    margin-inline: auto;
+    text-align: center;
+    .card {
+      &-img {
+        width: 27%;
+        max-width: 170px;
+        margin-bottom: 0.75em;
+        margin-inline: auto;
+        img {
+          border-radius: 10px;
+        }
+        overflow: none;
+      }
+      &-name {
+        font-size: 0.8rem;
+        color: #4e5150;
+        margin-bottom: 0.2rem;
+      }
+      &-desc {
+        font-size: 0.625rem;
+        color: #a9a9a9;
+      }
+      &-stats {
+        width: 90%;
+        max-width: 350px;
+        margin-block: 0.75em 1.5em;
+        margin-inline: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .stat {
+          width: 30%;
+          max-width: 100px;
+          background-color: #e5e5e5;
+          padding-block: 0.5em;
+          border-radius: 6px;
+          h1,
+          p {
+            font-size: 0.75rem;
+          }
+          h1 {
+            color: #4e5150;
+          }
+          p {
+            color: #bdbdbd;
+          }
+        }
+      }
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas:
+        'img1 img2 img2'
+        'img3 img3 img4'
+        'img5 img6 img4';
+      gap: 0.5em;
+      &-img {
+        img {
+          border-radius: 6px;
+          height: 100%;
+        }
+      }
+
+      &-img:nth-child(1) {
+        grid-area: img1;
+      }
+      &-img:nth-child(2) {
+        grid-area: img2;
+      }
+      &-img:nth-child(3) {
+        grid-area: img3;
+      }
+      &-img:nth-child(4) {
+        grid-area: img4;
+      }
+      &-img:nth-child(5) {
+        grid-area: img5;
+      }
+      &-img:nth-child(6) {
+        grid-area: img6;
+      }
+    }
+  }
+  footer {
+    .attribution {
+      width: max-content;
+      margin-inline: auto;
+      color: #b9bdcf;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      .author-link {
+        color: inherit;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 750px) {
+  main {
+    .profile {
+      width: 70%;
+
+      .card {
+        &-name {
+          font-size: 1.5rem;
+        }
+        &-desc {
+          font-size: 0.9rem;
+        }
+        &-stats {
+          .stat {
+            h1 {
+              font-size: 1.125rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
